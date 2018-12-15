@@ -8,15 +8,21 @@ var cardFour = cards[3];
 
 
 var cardsInPlay = [];
-cardsInPlay.push(cardOne);
-cardsInPlay.push(cardTwo);
-if(cardsInPlay[0] === cardsInPlay[1]){
-    alert("You found a match!");
-}
-else
+function flipCard(cardId)
 {
-    alert("Sorry, try agin");
-
+    cardsInPlay.push(cards[cardId])
+    console.log("User flipped" + cards[cardId])
 }
 
-console.log("User flipped " + cardOne);
+function checkForMatch(){
+    if (cardsInPlay[0] === cardsInPlay[1]) {
+        console.log("You found a match!");
+        } else {
+        console.log("Sorry, try again.");
+        }
+}
+
+flipCard(0);
+flipCard(1);
+checkForMatch();
+
